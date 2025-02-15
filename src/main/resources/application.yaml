@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    function:
+      definition: message-out
+    stream:
+      bindings:
+        message-out-out-0:
+          destination: my-exchange
+          content-type: text/plain
+      rabbit:
+        bindings:
+          message-out-out-0:
+            producer:
+              exchangeType: direct
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
